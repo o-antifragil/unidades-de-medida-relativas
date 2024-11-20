@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medidas Relativas</title>
+    <link rel="stylesheet" href="../13 - unidade de medida relativa/estilo.css">
+</head>
+
+<body>
+    <div>
+        <h2>O que são as Medidas Relativas?</h2>
+        <p>
+            As medidas <strong>relativas</strong> no CSS são unidades de tamanho que se ajustam de acordo com o contexto
+            do elemento ao qual estão aplicadas. Diferentemente das medidas absolutas (como <code>px</code>,
+            <code>cm</code> ou <code>in</code>), as medidas relativas são mais flexíveis, permitindo designs responsivos
+            que se adaptam a diferentes dispositivos e tamanhos de tela.
+        </p>
+    </div>
+    <div>
+        <h3>Principais Medidas Relativas no CSS</h3>
+        <ol>
+            <li>
+                <p>
+                    <code>em</code>
+                </p>
+                <ul>
+                    <li>Baseia-se no tamanho da fonte do elemento pai.</li>
+                    <li>Exemplo: Se a fonte do elemento pai é <code>16x</code>, <code>2em</code> será igual a
+                        <code>32px</code>.
+                    </li>
+                    <li>Geralmente usando para espaçamentos, tamanhos de fonte e margens.</li>
+                </ul>
+            </li>
+            <li>
+                <p>
+                    <code>rem</code> (root em)
+                </p>
+                <ul>
+                    <li>Baseia-se no tamanho da fonte do elemento raiz(<code>&lt;html&gt;</code>).</li>
+                    <li>xemplo: se o tamanho da fonte no elemento &lt;html&gt; é <code>16px</code>, <code>2rem</code>
+                        será igual a <code>32px</code></li>
+                    <li>Mais previsível que <code>em</code> em layouts complexos.</li>
+                </ul>
+            </li>
+            <li>
+                <p>
+                    <code>%</code>
+                </p>
+                <ul>
+                    <li>Baseia-se no tamanho do elemento pai (ou, no caso de largura, no tamanho do contêiner).</li>
+                    <li>Exemploo: <code>widht: 50%</code> define a largura do elemento como metade do contêiner pai.
+                    </li>
+                    <li>Usado para largura, altura e outros dimensionamentos.</li>
+                </ul>
+            </li>
+            <li>
+                <p>
+                    <code>vh</code> e <code>vw</code> (viewport height e viewport widht)
+                </p>
+                <ul>
+                    <li>Relacionam-se ao tamanho da janela de visualização:</li>
+                    <li> <code>1vh</code> = 1% da altura da viewport.</li>
+                    <li><code>1vw</code>1% da largura da viewport.</li>
+                    <li>Usado para dedsigns responsivos que dependem do tamanho da tela.</li>
+                </ul>
+            </li>
+            <li>
+                <p>
+                    <code>vmin</code> e <code>vmax</code>
+                </p>
+                <ul>
+                    <li>Baseiam-se no menor(<code>vmin</code>) ou maior (<code>vmax</code>) valor entre a altura
+                        (<code>vh</code>) e a largura (<code>vw</code>) da viewport.</li>
+                    <li>Exemplo:</li>
+                    <ul>
+                        <li>Em uma tela de <code>800px</code> de largura e <code>600px</code> de altura:</li>
+                        <ul>
+                            <li><code>1vmin</code> = <code>6px</code> (1% da menos dimensão.)</li>
+                            <li><code>1vmax</code> = <code>8px</code> (1% da maior dimensão).</li>
+                        </ul>
+                    </ul>
+                </ul>
+            </li>
+            <li>
+                <p>
+                    <code>ch</code>
+                </p>
+                <ul>
+                    <li>Baseia-se na largura média do caractere <code>0</code> na fonte aplicada ao elemento.</li>
+                    <li>Útil para largura de texto e caixas.</li>
+                </ul>
+            </li>
+            <li>
+                <p>
+                    <code>ex</code>
+                </p>
+                <ul>
+                    <li>Baseia-se na altura da letra "x" minúscula na fonte usada.</li>
+                    <li>Menos comum devido à inconsistência entre fontes.</li>
+                </ul>
+            </li>
+        </ol>
+    </div>
+    <div>
+        <h3> Benefícios das Medidas Relativas</h3>
+        <ul>
+            <li><strong>Flexibilidade:</strong>Adaptam-se ao contexto do elemento e ao ambiente (dispositivos ou
+                tamanhos de tela).</li>
+            <li><strong>Responsividade</strong>: Facilitam a criação de layouts que se ajustam a diferentes resoluções.
+            </li>
+            <li><strong>Consistência</strong>: <code>rem</code> e <code>%</code> ajudam a manter proporções consistentes
+                em todo o design.</li>
+        </ul>
+    </div>
+    <div>
+        <h3>Exemplo Comparativo</h3>
+
+        <pre><code>
+
+<span class="seletor">html</span><span class="selector"> {
+    </span><span class="propriedade">font-size</span><span class="pontuacao">:</span> <span class="valor">16px</span><span class="pontuacao">;</span> <span class="comentarios">/* Define base para rem */</span>
+<span class="selector">{</span>
+
+<span class="seletor-classe">.container </span><span class="selector">{</span>
+    <span class="propriedade">widht</span><span class="pontuacao">:</span><span class="valor"> 50%</span><span class="pontuacao">;</span><span class="comentarios"> /* 50% da largura do elemento pai */</span>
+    <span class="propriedade">padding</span><span class="pontuacao">:</span><span class="valor"> 2em</span><span class="pontuacao">;</span><span class="comentarios"> /* Baseado no tamanho da fonte do elemento pai */</span>
+    <span class="propriedade">margin</span><span class="pontuacao">:</span><span class="valor"> 1rem</span><span class="pontuacao">;</span><span class="comentarios"> /*Baseado no tamanho da fonte do elemento raiz */</span>
+    <span class="propriedade">font-size</span><span class="pontuacao">:</span><span class="valor"> 1.5rem</span><span class="pontuacao">;</span><span class="comentarios">/* 24px (16px x 1.5) */</span>
+<span class="selector">}</span>
+
+<span class="seletor-classe">.fullscreen </span><span class="selector">{</span>
+    <span class="propriedade">widht</span><span class="pontuacao">:</span><span class="valor"> 100vw</span><span class="pontuacao">;</span><span class="comentarios"> /*100% da largura da viewport */</span>
+    <span class="propriedade">height</span><span class="pontuacao">:</span><span class="valor"> 100vh</span><span class="pontuacao">;</span><span class="comentarios"> /* 100% da altura da viewport */</span>
+        </code></pre>
+    </div>
+    <div>
+        <h3>Quando Usar Medidas Relativas?</h3>
+        <ul>
+            <li><code>em</code>: Para espaçamentos dependentes do tamanho da fonte de um elemento.</li>
+            <li><code>rem</code>: Para tamanhos consistentes baseados no tamanho raiz.</li>
+            <li><code>%</code>: Para larguras e alturas relativas ao contêiner.</li>
+            <li><code>vh</code> e <code>vw</code>: Para ajustar elementos ao tamanho da tela (como cabeçalhos ou banners
+                em tela cheia).</li>
+        </ul>
+        <p>Medidas relativas são fundamentias para designs fluidos e responsivos!</p>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,72 @@
+ul {
+    list-style-type: disc;
+}
+
+body {
+    margin: 20px;
+    padding: 20px;
+    text-align: justify;
+    line-height: 1.5;
+    font-family: ui-sans-serif, -apple-system, system-ui, Segoe UI, Helvetica, Apple Color Emoji, Arial, sans-serif, Segoe UI Emoji, Segoe UI Symbol;
+    background-color: whitesmoke;
+}
+
+code {
+    background-color: gainsboro;
+    padding: 1.5px;
+    border-radius: 5%;
+}
+
+pre code {
+    background-color: #1e1e1e; /* Fundo escuro para destacar o código */
+    color: #d4d4d4; /* Cor do texto principal */
+    padding: 20px;
+    border-radius: 5px;
+    display: block;
+    overflow-x: auto;
+    font-family: 'Fira Code', monospace;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* Estilização específica do código CSS */
+.seletor {
+    color: #f565a3;
+}
+
+.seletor-classe {
+    color: #98fb98;
+}
+
+.seletor-id {
+    color: #98fb98;
+}
+
+.propriedade {
+    color: #9e7fdb;
+}
+
+.valor {
+    color: #79b2c3;
+}
+
+.declaracao {
+    color: #fff; /* Definindo uma cor padrão para declarações */
+}
+
+.pontuacao {
+    color: #fff;
+}
+
+.comentarios {
+    color: #6a6a6a;
+    font-style: italic;
+}
+
+.pseud-class {
+    color: #d7ba7d;
+}
+
+.string {
+    color: #ff7c00;
+}
